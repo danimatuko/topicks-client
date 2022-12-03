@@ -19,7 +19,6 @@ import AboutPage from './components/pages/AboutPage';
 
 const App = observer(() => {
   const { user } = useContext(StoreContext);
-  console.log(process.env);
 
   return (
     <div className='App'>
