@@ -1,0 +1,272 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #f7f7fe;
+}
+
+#search,
+#search-btn {
+    box-shadow: none
+}
+
+/* SCROLL STYLE */
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(173, 172, 172);
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+nav.nav {
+    border-radius: 0 !important;
+}
+
+
+
+.page-link,
+.page-link:hover {
+    background-color: #ccc;
+}
+
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:hover {
+    color: #ccc !important;
+}
+
+.hero {
+    padding: 8rem;
+
+}
+
+.hero-wrapper {
+    background-image: url("https://images.unsplash.com/photo-1506790214319-8ca4a8d11886?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1632&q=80") !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#dropdown-basic-button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+/* remove the  default arrow from bootstrap dropdown button*/
+#dropdown-basic-button::after {
+    content: none;
+}
+
+.table-row-dropdown .dropdown-toggle {
+    background: none;
+    border: none;
+}
+
+.table-row-dropdown .dropdown-toggle::after {
+    content: none !important;
+
+}
+
+.like,
+.unlike,
+.bookmark {
+    cursor: pointer;
+}
+
+.box-shadow {
+    box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%) !important;
+}
+
+.nav-pills .nav-link.active {
+    background-color: black;
+}
+
+.page-link {
+    color: black;
+    height: 100%;
+    width: 100%;
+}
+
+.page-item.active .page-link {
+    background-color: black;
+    border-color: black;
+}
+
+
+.dashboard-nav-item {
+    cursor: pointer;
+    color: black;
+}
+
+.dashboard-nav-item a {
+    color: black;
+}
+
+.profile-initials {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem
+}
+
+.dropdown-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    object-fit: unset;
+    border-radius: 50%;
+}
+
+
+.author-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.topic {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+footer ul {
+    width: 100px;
+}
+
+
+
+
+
+
+
+
+/********** MOBILE **********/
+@media screen and (max-width: 768px) {
+
+    p,
+    span {
+        font-size: 0.9rem !important;
+    }
+
+    .logo {
+        width: 55px !important;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 4rem;
+    }
+
+    .hero .lead {
+        font-size: 1rem !important;
+    }
+
+    .hero button {
+        font-size: 1rem !important;
+        padding-top: 0.3rem !important;
+        padding-bottom: 0.3rem !important;
+    }
+
+    .post-preview {
+        flex-direction: column;
+    }
+
+    .post-preview-image {
+        /* width: 95% !important; */
+        margin-top: 12px;
+    }
+
+    footer>div {
+        flex-direction: column;
+
+    }
+
+    footer>div>div {
+        margin-top: 15px;
+    }
+
+    /* POST-PAGE */
+    .post {
+        padding-top: 0 !important;
+        width: 85vw !important;
+    }
+
+    .post .tag {
+        font-size: 0.5rem !important;
+        padding: 0;
+    }
+
+    .post .dropdown-img {
+        height: 35px !important;
+        width: 35px !important;
+    }
+
+
+    .post-date,
+    .author {
+        font-size: 0.8rem;
+    }
+
+    .like,
+    .unlike,
+    .bookmark {
+        font-size: 0.8rem !important;
+    }
+
+    .post-title {
+        font-size: 1.5rem;
+    }
+
+    .post-body img {
+        max-width: 100% !important;
+        height: 100%;
+    }
+
+    .comments {
+        width: 85vw !important;
+        margin-top: 0 !important;
+    }
+
+
+    /* LOGIN & REGISTER PAGE */
+    .login-page,
+    .register-page {
+        width: 75vw !important;
+        font-size: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .recommended-topics .topic,
+    .post-preview .tag {
+        font-size: 0.7rem !important;
+    }
+
+}
