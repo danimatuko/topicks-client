@@ -111,7 +111,8 @@ const HomePage = ({ location, history }) => {
                     className='d-block mx-auto'
                   />
                 ) : (
-                  postsByTopic?.posts?.map((post) => (
+                  Array.isArray(postsByTopic) &&
+                  postsByTopic.posts.map((post) => (
                     <PostPreview
                       key={post._id}
                       post={post}
@@ -134,7 +135,8 @@ const HomePage = ({ location, history }) => {
                   />
                 ) : (
                   allPosts &&
-                  allPosts?.posts?.map((post) => (
+                  Array.isArray(allPosts) &&
+                  allPosts.posts.map((post) => (
                     <PostPreview
                       key={post._id}
                       post={post}
@@ -162,7 +164,8 @@ const HomePage = ({ location, history }) => {
                     />
                   ) : (
                     latestPosts &&
-                    latestPosts?.map((post) => (
+                    Array.isArray(latestPosts) &&
+                    latestPosts.map((post) => (
                       <PostPreview
                         key={post._id}
                         post={post}
@@ -181,7 +184,8 @@ const HomePage = ({ location, history }) => {
                     />
                   ) : (
                     mostLikedPosts &&
-                    mostLikedPosts?.map((post) => (
+                    Array.isArray(mostLikedPosts) &&
+                    mostLikedPosts.map((post) => (
                       <PostPreview
                         key={post._id}
                         post={post}
