@@ -8,10 +8,10 @@ import { Link } from 'react-router-dom';
 import Paginate from './Paginate';
 
 const HomePage = ({ location, history }) => {
-  const [latestPosts, setLatestPosts] = useState(null);
-  const [mostLikedPosts, setMostLikedPosts] = useState(null);
+  const [latestPosts, setLatestPosts] = useState([]);
+  const [mostLikedPosts, setMostLikedPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [allPosts, setAllPosts] = useState(null);
+  const [allPosts, setAllPosts] = useState([]);
   const [postsByTopic, setPostsByTopic] = useState({
     topic: '',
     posts: [],
@@ -120,7 +120,7 @@ const HomePage = ({ location, history }) => {
                 )}
               </Row>
             )}
-            {allPosts && postsByTopic?.topic === '' && (
+            {allPosts.length && postsByTopic?.topic === '' && (
               <Row
                 className='mb-5 mx-auto'
                 key={pageNumber}>
@@ -134,7 +134,7 @@ const HomePage = ({ location, history }) => {
                   />
                 ) : (
                   allPosts &&
-                  allPosts?.posts?.map((post) => (
+                  allPosts.posts.map((post) => (
                     <PostPreview
                       key={post._id}
                       post={post}
@@ -149,7 +149,7 @@ const HomePage = ({ location, history }) => {
                 />
               </Row>
             )}
-            {postsByTopic?.topic === '' && !allPosts && (
+            {postsByTopic?.topic === '' && !allPosts.length && (
               <>
                 <Row className='mb-5 mx-auto'>
                   <h2 className='display-6 my-4 fw-bold text-primary'>

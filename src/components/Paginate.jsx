@@ -3,11 +3,11 @@ import { Pagination } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 
-const Paginate = ({ total, page, path }) => {
+const Paginate = ({ total = 1, page, path }) => {
   const location = useLocation();
   path = path || location.pathname;
-  console.log(path);
   if (total <= 1) return null;
+  console.log('total', total);
 
   return (
     <Pagination className='justify-content-center my-3'>
