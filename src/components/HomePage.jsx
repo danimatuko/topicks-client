@@ -79,7 +79,7 @@ const HomePage = ({ location, history }) => {
                 as={Button}
                 className='text-dark me-3'
                 to='#'
-                onClick={() => setAllPosts(null)}>
+                onClick={() => setAllPosts([])}>
                 <i className='fas fa-times'></i> All Posts
               </Link>
             ) : (
@@ -111,7 +111,7 @@ const HomePage = ({ location, history }) => {
                     className='d-block mx-auto'
                   />
                 ) : (
-                  postsByTopic.posts.map((post) => (
+                  postsByTopic.posts?.map((post) => (
                     <PostPreview
                       key={post._id}
                       post={post}
@@ -134,15 +134,15 @@ const HomePage = ({ location, history }) => {
                   />
                 ) : (
                   allPosts &&
-                  allPosts.posts.map((post) => (
+                  allPosts.posts?.map((post) => (
                     <PostPreview
                       key={post._id}
                       post={post}
                     />
                   ))
                 )}
-
-                {/* <Paginate
+                {/* 
+                <Paginate
                   total={allPosts.totalPages}
                   page={allPosts.page}
                   path='posts'

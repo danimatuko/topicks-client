@@ -11,7 +11,7 @@ const Paginate = ({ total, page, path }) => {
 
   return (
     <Pagination className='justify-content-center my-3'>
-      {[...Array(Math.ceil(total)).keys()]?.map((p) => (
+      {[...Array(Math.ceil(total)).keys()].map((p) => (
         <LinkContainer
           key={p}
           to={`/${path}/?page=${p + 1}`}>
