@@ -91,7 +91,7 @@ const HomePage = ({ location, history }) => {
                 View All Posts
               </Link>
             )}
-            {postsByTopic.topic && (
+            {postsByTopic?.topic && (
               <Link
                 className='text-dark me-3'
                 to='#'
@@ -100,7 +100,7 @@ const HomePage = ({ location, history }) => {
                 {postsByTopic.topic}
               </Link>
             )}
-            {postsByTopic.topic && (
+            {postsByTopic?.topic && (
               <Row className='mt-3'>
                 <h2 className='display-6 my-5 fw-bold text-primary'>
                   {postsByTopic.topic}
@@ -111,7 +111,7 @@ const HomePage = ({ location, history }) => {
                     className='d-block mx-auto'
                   />
                 ) : (
-                  postsByTopic.posts?.map((post) => (
+                  postsByTopic?.posts?.map((post) => (
                     <PostPreview
                       key={post._id}
                       post={post}
@@ -120,7 +120,7 @@ const HomePage = ({ location, history }) => {
                 )}
               </Row>
             )}
-            {allPosts && postsByTopic.topic === '' && (
+            {allPosts && postsByTopic?.topic === '' && (
               <Row
                 className='mb-5 mx-auto'
                 key={pageNumber}>
@@ -134,22 +134,22 @@ const HomePage = ({ location, history }) => {
                   />
                 ) : (
                   allPosts &&
-                  allPosts.posts?.map((post) => (
+                  allPosts?.posts?.map((post) => (
                     <PostPreview
                       key={post._id}
                       post={post}
                     />
                   ))
                 )}
-                {/* 
+
                 <Paginate
                   total={allPosts.totalPages}
                   page={allPosts.page}
                   path='posts'
-                /> */}
+                />
               </Row>
             )}
-            {postsByTopic.topic === '' && !allPosts && (
+            {postsByTopic?.topic === '' && !allPosts && (
               <>
                 <Row className='mb-5 mx-auto'>
                   <h2 className='display-6 my-4 fw-bold text-primary'>
@@ -162,7 +162,7 @@ const HomePage = ({ location, history }) => {
                     />
                   ) : (
                     latestPosts &&
-                    latestPosts.map((post) => (
+                    latestPosts?.map((post) => (
                       <PostPreview
                         key={post._id}
                         post={post}
@@ -181,7 +181,7 @@ const HomePage = ({ location, history }) => {
                     />
                   ) : (
                     mostLikedPosts &&
-                    mostLikedPosts.map((post) => (
+                    mostLikedPosts?.map((post) => (
                       <PostPreview
                         key={post._id}
                         post={post}
