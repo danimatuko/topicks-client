@@ -11,7 +11,7 @@ const HomePage = ({ location, history }) => {
   const [latestPosts, setLatestPosts] = useState([]);
   const [mostLikedPosts, setMostLikedPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [allPosts, setAllPosts] = useState([]);
+  const [allPosts, setAllPosts] = useState(null);
   const [postsByTopic, setPostsByTopic] = useState({
     topic: '',
     posts: [],
@@ -74,7 +74,7 @@ const HomePage = ({ location, history }) => {
       <Container id='home-posts-container'>
         <Row className='my-5 d-flex justify-content-between'>
           <Col md={6}>
-            {allPosts.length ? (
+            {allPosts && allPosts ? (
               <Link
                 as={Button}
                 className='text-dark me-3'
@@ -120,7 +120,7 @@ const HomePage = ({ location, history }) => {
                 )}
               </Row>
             )}
-            {allPosts.length && postsByTopic?.topic === '' && (
+            {allPosts && postsByTopic?.topic === '' && (
               <Row
                 className='mb-5 mx-auto'
                 key={pageNumber}>
@@ -149,7 +149,7 @@ const HomePage = ({ location, history }) => {
                 />
               </Row>
             )}
-            {postsByTopic?.topic === '' && !allPosts.length && (
+            {postsByTopic?.topic === '' && !allPosts && (
               <>
                 <Row className='mb-5 mx-auto'>
                   <h2 className='display-6 my-4 fw-bold text-primary'>
@@ -161,7 +161,7 @@ const HomePage = ({ location, history }) => {
                       className='d-block mx-auto'
                     />
                   ) : (
-                    latestPosts &&
+                    Array.isArray(latestPosts) &&
                     latestPosts.map((post) => (
                       <PostPreview
                         key={post._id}
@@ -180,7 +180,7 @@ const HomePage = ({ location, history }) => {
                       className='d-block mx-auto'
                     />
                   ) : (
-                    mostLikedPosts &&
+                    Array.isArray(mostLikedPosts) &&
                     mostLikedPosts?.map((post) => (
                       <PostPreview
                         key={post._id}
