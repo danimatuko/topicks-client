@@ -74,7 +74,7 @@ const HomePage = ({ location, history }) => {
       <Container id='home-posts-container'>
         <Row className='my-5 d-flex justify-content-between'>
           <Col md={6}>
-            {allPosts ? (
+            {allPosts.length ? (
               <Link
                 as={Button}
                 className='text-dark me-3'
@@ -133,7 +133,7 @@ const HomePage = ({ location, history }) => {
                     className='d-block mx-auto'
                   />
                 ) : (
-                  allPosts &&
+                  Array.isArray(allPosts) &&
                   allPosts.posts.map((post) => (
                     <PostPreview
                       key={post._id}
