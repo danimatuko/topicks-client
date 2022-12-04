@@ -3,8 +3,6 @@ import { getDate } from '../helpers/getDate';
 import Axios from 'axios';
 import { clearPersistedStore, makePersistable } from 'mobx-persist-store';
 
-Axios.defaults.baseURL = 'https://topicks-server.up.railway.app/';
-
 class Post {
   id = '';
   user_id = '';

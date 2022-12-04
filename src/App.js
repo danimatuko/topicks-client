@@ -16,11 +16,13 @@ import { useContext } from 'react';
 import { StoreContext } from './stores/RootStore';
 import { observer } from 'mobx-react-lite';
 import AboutPage from './components/pages/AboutPage';
+import Axios from 'axios';
 
 const App = observer(() => {
-  const { user } = useContext(StoreContext);
+  if (process.env.NODE_ENV === 'production')
+    Axios.defaults.baseURL = 'https://topicks-server.up.railway.app/';
 
-  console.log(process.env);
+  const { user } = useContext(StoreContext);
 
   return (
     <div className='App'>

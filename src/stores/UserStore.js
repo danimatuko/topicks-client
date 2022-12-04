@@ -6,7 +6,6 @@ import {
   getPersistedStore,
   makePersistable,
 } from 'mobx-persist-store';
-Axios.defaults.baseURL = 'https://topicks-server.up.railway.app/';
 
 class User {
   id = '';

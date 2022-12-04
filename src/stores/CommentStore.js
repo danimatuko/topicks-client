@@ -1,7 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 import Axios from 'axios';
 import { clearPersistedStore, makePersistable } from 'mobx-persist-store';
-Axios.defaults.baseURL = 'https://topicks-server.up.railway.app/';
 
 class Comment {
   postId = '';
