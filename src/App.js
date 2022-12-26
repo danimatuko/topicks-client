@@ -20,7 +20,7 @@ import Axios from 'axios';
 
 const App = observer(() => {
   if (process.env.NODE_ENV === 'production')
-    Axios.defaults.baseURL = 'https://topicks-server.up.railway.app/';
+    Axios.defaults.baseURL = 'https://topciks-server.onrender.com/';
 
   const { user } = useContext(StoreContext);
 
